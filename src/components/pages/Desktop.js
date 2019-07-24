@@ -1,15 +1,16 @@
 import React from "react"
 import styled from "styled-components"
 import { Header, Grid } from "../atoms"
+import Task from "../molecules/Task"
 
 const Desktop = () => {
   return (
     <DesktopWrap>
       <Header.H1 color={4}>Новые задачи</Header.H1>
       <Grid.Task>
-        <div>task</div>
-        <div>task</div>
-        <div>task</div>
+        <Task />
+        <Task />
+        <Task />
       </Grid.Task>
     </DesktopWrap>
   )

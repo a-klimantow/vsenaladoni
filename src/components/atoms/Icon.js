@@ -135,6 +135,23 @@ const Icon = ({ className, size = 20, icon }) => {
         </svg>
       )
       break
+    case "place":
+      svg = (
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 19">
+          <g clipPath="url(#clip0)">
+            <path
+              fill="#258FFB"
+              d="M14.196 1.946a6.642 6.642 0 00-9.392 0c-2.337 2.337-2.6 6.737-.617 9.381L9.5 19l5.313-7.673c1.984-2.644 1.72-7.044-.617-9.381zM9.565 8.77a2.192 2.192 0 110-4.385 2.192 2.192 0 010 4.385z"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <path fill="#fff" d="M0 0H19V19H0z" />
+            </clipPath>
+          </defs>
+        </svg>
+      )
+      break
     default:
       svg = null
   }
