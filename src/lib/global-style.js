@@ -1,14 +1,21 @@
-import { createGlobalStyle } from "styled-components"
-import { fonts } from "./fonts/fonts"
+import { createGlobalStyle } from "styled-components";
+import { fonts } from "./fonts/fonts";
 
 export default createGlobalStyle`
   ${fonts};
   
   body {
     margin: 0;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
     letter-spacing: 0.01em;
     line-height: 1.3;
     background: #FAFAFA;
   }
-`
+
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+`;

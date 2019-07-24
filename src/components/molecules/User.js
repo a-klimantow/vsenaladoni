@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import { Avatar, Header, Text } from "../atoms"
+import React from "react";
+import styled from "styled-components";
+import { Avatar, Header, Text, Icon } from "../atoms";
 
 const User = ({
   name = "Стрелкова А.Н.",
@@ -9,7 +9,9 @@ const User = ({
 }) => {
   return (
     <UserWrap>
-      <Avatar>i</Avatar>
+      <Avatar>
+        <Icon icon="avatar" />
+      </Avatar>
       <div className="info">
         <Header.H1 color={4}>{name}</Header.H1>
         <Text small color={5}>
@@ -20,10 +22,10 @@ const User = ({
         </Text.Status>
       </div>
     </UserWrap>
-  )
-}
+  );
+};
 
-export default User
+export default User;
 
 const UserWrap = styled.div`
   display: flex;
@@ -34,4 +36,4 @@ const UserWrap = styled.div`
   .info {
     margin-left: 10px;
   }
-`
+`;
