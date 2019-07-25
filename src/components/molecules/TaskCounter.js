@@ -1,22 +1,40 @@
-import React from "react";
-import styled from "styled-components";
-import { Text, Barge } from "../atoms";
+import React from "react"
+import styled, { css } from "styled-components"
+import { Text, Barge } from "../atoms"
 
-const TaskCounter = ({ title }) => {
+const TaskCounter = ({ title, type }) => {
   return (
-    <TaskCounterWrap>
-      <Text color={4}>Все задачи</Text>
-      <Barge>56</Barge>
+    <TaskCounterWrap type={type}>
+      <Text>{title}</Text>
+      <Barge type={type}>56</Barge>
     </TaskCounterWrap>
-  );
-};
+  )
+}
 
-export default TaskCounter;
+export default TaskCounter
 
 const TaskCounterWrap = styled.div`
   display: flex;
   align-content: center;
+  color: ${({ theme }) => theme.font.color[4]};
+  cursor: pointer;
   ${Text} {
     margin-right: 10px;
   }
-`;
+
+  ${p =>
+    p.type === "rush" &&
+    css`
+      :hover {
+        color: ${({ theme }) => theme.colors.alert};
+      }
+    `}
+
+  ${p =>
+    p.type === "regular" &&
+    css`
+      :hover {
+        color: ${({ theme }) => theme.colors.normal};
+      }
+    `}
+`

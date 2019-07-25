@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import { Paper, Text, Header, Divider, Icon, Step } from "../../atoms";
+import React from "react"
+import styled from "styled-components"
+import { Paper, Text, Header, Divider, Icon, Step } from "../../atoms"
 
-const Task = () => {
+const Task = ({ title }) => {
   const task = (
     <TaskTail>
       <TaskHeader>
         <Text color={5} small>
           216
         </Text>
-        <Header.H2 color={4}>Восстановнление одпу</Header.H2>
+        <Header.H2 color={4}>{title}</Header.H2>
         <Text color={5} small>
           20.05.2019
         </Text>
@@ -27,12 +27,12 @@ const Task = () => {
         </div>
       </TaskBody>
     </TaskTail>
-  );
+  )
 
-  return <>{task}</>;
-};
+  return <>{task}</>
+}
 
-export default Task;
+export default Task
 
 const TaskTail = styled(Paper)`
   position: relative;
@@ -48,7 +48,7 @@ const TaskTail = styled(Paper)`
     left: 50%;
     transform: translateX(-50%);
   }
-`;
+`
 
 const TaskHeader = styled.div`
   padding: 15px;
@@ -59,7 +59,7 @@ const TaskHeader = styled.div`
     margin-left: 7px;
     margin-right: auto;
   }
-`;
+`
 const TaskBody = styled.div`
   min-height: 100px;
   padding: 20px 15px 28px;
@@ -78,4 +78,4 @@ const TaskBody = styled.div`
       margin-right: 8px;
     }
   }
-`;
+`

@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import { fonts } from "./fonts/fonts";
+import { createGlobalStyle } from "styled-components"
+import { fonts } from "./fonts/fonts"
 
 export default createGlobalStyle`
   ${fonts};
@@ -18,4 +18,36 @@ export default createGlobalStyle`
     outline: none;
     cursor: pointer;
   }
-`;
+
+  a {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .select {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #C2CFE0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #90A0B7;
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-left: 1px solid #90A0B7;
+      border-bottom: 1px solid #90A0B7;
+      margin-left: 10px;
+      transform: rotate(-45deg) translateY(-4px);
+    }
+  }
+`
