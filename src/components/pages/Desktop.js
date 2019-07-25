@@ -1,17 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Header, Grid, InfoBlock } from "../atoms";
 import Task from "../molecules/Task";
 import Chart from "../organisms/Chart";
+import { tasks } from "../../data";
 
 const Desktop = () => {
   return (
     <DesktopWrap>
       <Header.H1 color={4}>Новые задачи</Header.H1>
       <Grid.Task>
-        <Task />
-        <Task />
-        <Task />
+        {tasks.slice(0, 3).map(item => (
+          <Link to={`/control/${item.id}`} key={item.id}>
+            <Task title={item.title} />
+          </Link>
+        ))}
       </Grid.Task>
       <Header.H1 color={4}>Общая статистика по МКД</Header.H1>
       <Chart />

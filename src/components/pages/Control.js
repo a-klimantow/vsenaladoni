@@ -1,26 +1,22 @@
-import React, { Component } from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
-import { Icon, FilterPanel, Button, Grid } from "../atoms"
-import TaskCounter from "../molecules/TaskCounter"
-import Task from "../molecules/Task"
-import TaskTable from "../molecules/Task/TaskTable"
-import { tasks } from "../../data"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { Icon, FilterPanel, Button, Grid } from "../atoms";
+import TaskCounter from "../molecules/TaskCounter";
+import Task from "../molecules/Task";
+import TaskTable from "../molecules/Task/TaskTable";
+import { tasks } from "../../data";
 
 class Control extends Component {
   state = {
-    grid: "tail"
-  }
-  goToTaskDetails = e => {
-    // this.props.history.replace("/")
-    console.log(e)
-  }
+    grid: "line"
+  };
 
   render() {
-    const { history } = this.props
+    const { history } = this.props;
     return (
       <ControlWrap>
-        <div>любая дата</div>
+        <div className="select">Любая дата</div>
         <FilterPanel>
           <TaskCounter title="Все задачи" />
           <TaskCounter title="Срочные" type="rush" />
@@ -50,10 +46,10 @@ class Control extends Component {
           </Grid.Task>
         )}
       </ControlWrap>
-    )
+    );
   }
 }
 
-export default Control
+export default Control;
 
-const ControlWrap = styled.section``
+const ControlWrap = styled.section``;

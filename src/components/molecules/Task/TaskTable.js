@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import { Text, Header, Step, Icon } from "../../atoms"
+import React from "react";
+import styled from "styled-components";
+import { Text, Header, Step, Icon } from "../../atoms";
+import { tasks } from "../../../data";
 
 const TaskTable = ({ history }) => {
-  console.log(history)
   return (
     <Table>
       <Table.Header>
@@ -16,157 +16,47 @@ const TaskTable = ({ history }) => {
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        <Table.Row onClick={() => history.replace("/control/l")}>
-          <td>
-            <Text color={5}>216</Text>
-          </td>
-          <td>
-            <Header.H2 color={1}>Некоректные данные</Header.H2>
-          </td>
-          <td>
-            <div className="item">
-              <Step>4</Step>
-              <Header.H2>Замена прибора</Header.H2>
-            </div>
-          </td>
-          <td>
-            <div className="item">
-              <Icon icon="place" />
-              <Text>Ул. Юности 25/2</Text>
-            </div>
-          </td>
-          <td>
-            <Text color={5}>20.05.2019</Text>
-          </td>
-        </Table.Row>
-        <Table.Row onClick={() => history.replace("/control/l")}>
-          <td>
-            <Text color={5}>216</Text>
-          </td>
-          <td>
-            <Header.H2 color={1}>Некоректные данные</Header.H2>
-          </td>
-          <td>
-            <div className="item">
-              <Step>4</Step>
-              <Header.H2>Замена прибора</Header.H2>
-            </div>
-          </td>
-          <td>
-            <div className="item">
-              <Icon icon="place" />
-              <Text>Ул. Юности 25/2</Text>
-            </div>
-          </td>
-          <td>
-            <Text color={5}>20.05.2019</Text>
-          </td>
-        </Table.Row>
-        <Table.Row onClick={() => history.replace("/control/l")}>
-          <td>
-            <Text color={5}>216</Text>
-          </td>
-          <td>
-            <Header.H2 color={1}>Некоректные данные</Header.H2>
-          </td>
-          <td>
-            <div className="item">
-              <Step>4</Step>
-              <Header.H2>Замена прибора</Header.H2>
-            </div>
-          </td>
-          <td>
-            <div className="item">
-              <Icon icon="place" />
-              <Text>Ул. Юности 25/2</Text>
-            </div>
-          </td>
-          <td>
-            <Text color={5}>20.05.2019</Text>
-          </td>
-        </Table.Row>
-        <Table.Row onClick={() => history.replace("/control/l")}>
-          <td>
-            <Text color={5}>216</Text>
-          </td>
-          <td>
-            <Header.H2 color={1}>Некоректные данные</Header.H2>
-          </td>
-          <td>
-            <div className="item">
-              <Step>4</Step>
-              <Header.H2>Замена прибора</Header.H2>
-            </div>
-          </td>
-          <td>
-            <div className="item">
-              <Icon icon="place" />
-              <Text>Ул. Юности 25/2</Text>
-            </div>
-          </td>
-          <td>
-            <Text color={5}>20.05.2019</Text>
-          </td>
-        </Table.Row>
-        <Table.Row onClick={() => history.replace("/control/l")}>
-          <td>
-            <Text color={5}>216</Text>
-          </td>
-          <td>
-            <Header.H2 color={1}>Некоректные данные</Header.H2>
-          </td>
-          <td>
-            <div className="item">
-              <Step>4</Step>
-              <Header.H2>Замена прибора</Header.H2>
-            </div>
-          </td>
-          <td>
-            <div className="item">
-              <Icon icon="place" />
-              <Text>Ул. Юности 25/2</Text>
-            </div>
-          </td>
-          <td>
-            <Text color={5}>20.05.2019</Text>
-          </td>
-        </Table.Row>
-        <Table.Row onClick={() => history.replace("/control/l")}>
-          <td>
-            <Text color={5}>216</Text>
-          </td>
-          <td>
-            <Header.H2 color={1}>Некоректные данные</Header.H2>
-          </td>
-          <td>
-            <div className="item">
-              <Step>4</Step>
-              <Header.H2>Замена прибора</Header.H2>
-            </div>
-          </td>
-          <td>
-            <div className="item">
-              <Icon icon="place" />
-              <Text>Ул. Юности 25/2</Text>
-            </div>
-          </td>
-          <td>
-            <Text color={5}>20.05.2019</Text>
-          </td>
-        </Table.Row>
+        {tasks.map(item => (
+          <Table.Row
+            key={item.id}
+            onClick={() => history.replace(`/control/${item.id}`)}
+          >
+            <td>
+              <Text color={5}>216</Text>
+            </td>
+            <td>
+              <Header.H2 color={1}>{item.title}</Header.H2>
+            </td>
+            <td>
+              <div className="item">
+                <Step>4</Step>
+                <Header.H2>{item.title}</Header.H2>
+              </div>
+            </td>
+            <td>
+              <div className="item">
+                <Icon icon="place" />
+                <Text>Ул. Юности 25/2</Text>
+              </div>
+            </td>
+            <td>
+              <Text color={5}>20.05.2019</Text>
+            </td>
+          </Table.Row>
+        ))}
       </Table.Body>
     </Table>
-  )
-}
+  );
+};
 
-export default TaskTable
+export default TaskTable;
 
 const Table = styled.table`
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 15px;
   table-layout: fixed;
-`
+`;
 
 Table.Header = styled.thead`
   & th:first-of-type {
@@ -186,7 +76,7 @@ Table.Header = styled.thead`
     font-family: "Ubuntu", sans-serif;
     font-weight: normal;
   }
-`
+`;
 
 Table.Body = styled.tbody`
   .item {
@@ -213,7 +103,21 @@ Table.Body = styled.tbody`
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.03),
       3px -3px 3px rgba(0, 0, 0, 0.02), -3px 0px 3px rgba(0, 0, 0, 0.03);
     padding-left: 30px;
+    position: relative;
+    z-index: -1;
+    &::before {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 30px;
+      background-color: #5cb854;
+      border-radius: 0 5px 5px 0;
+      position: absolute;
+      left: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
-`
+`;
 
-Table.Row = styled.tr``
+Table.Row = styled.tr``;

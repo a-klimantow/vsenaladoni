@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { fonts } from "./fonts/fonts"
+import { createGlobalStyle } from "styled-components";
+import { fonts } from "./fonts/fonts";
 
 export default createGlobalStyle`
   ${fonts};
@@ -10,6 +10,10 @@ export default createGlobalStyle`
     letter-spacing: 0.01em;
     line-height: 1.3;
     background: #FAFAFA;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   button {
@@ -39,6 +43,7 @@ export default createGlobalStyle`
     margin-bottom: 10px;
     font-size: 14px;
     color: #90A0B7;
+    cursor: pointer;
     &::after {
       content: '';
       display: inline-block;
@@ -49,5 +54,12 @@ export default createGlobalStyle`
       margin-left: 10px;
       transform: rotate(-45deg) translateY(-4px);
     }
+    &:hover {
+      color: #7499F8;
+      border-color: #7499F8;
+      ::after {
+        border-color: #7499F8;
+      }
+    }
   }
-`
+`;
