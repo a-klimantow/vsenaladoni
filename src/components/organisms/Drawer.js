@@ -7,7 +7,7 @@ import { Menu } from "."
 const Drawer = () => {
   return (
     <DrawerWrap>
-      <Logo>logo</Logo>
+      <Logo>MVP</Logo>
       <Divider />
       <User />
       <Menu />

@@ -80,7 +80,12 @@ const Chart = () => {
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+          <Area
+            type="monotone"
+            dataKey="uv"
+            stroke="#258FFB"
+            fill="rgba(37, 143, 251, 0.31)"
+          />
         </AreaChart>
       </ResponsiveContainer>
     </ChartWrap>

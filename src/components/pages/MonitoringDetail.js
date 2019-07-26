@@ -106,7 +106,7 @@ export default class extends Component {
           </Table.Header>
           <Table.Body>
             {[1, 1, 1, 1, 1, 1, 1].map(i => (
-              <Table.Row>
+              <Table.Row onClick={() => history.push("/odpu")}>
                 <td>292929292929</td>
                 <td>Вычислитель</td>
                 <td>ГВС</td>

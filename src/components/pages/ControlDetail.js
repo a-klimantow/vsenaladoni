@@ -152,7 +152,7 @@ const ControlDetail = ({ match, history }) => {
                 <span className="data">14:20</span>
                 <Text>Выполнено</Text>
               </div>
-              <Step.Round>4</Step.Round>
+              <Step.Round></Step.Round>
             </li>
           </ul>
         </div>
