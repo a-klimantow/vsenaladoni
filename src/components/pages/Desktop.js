@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { Header, Grid, InfoBlock } from "../atoms";
-import Task from "../molecules/Task";
-import Chart from "../organisms/Chart";
-import { tasks } from "../../data";
+import React from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import { Header, Grid, InfoBlock } from "../atoms"
+import Task from "../molecules/Task"
+import Chart from "../organisms/Chart"
+import { tasks } from "../../data"
 
 const Desktop = () => {
   return (
@@ -13,7 +13,7 @@ const Desktop = () => {
       <Grid.Task>
         {tasks.slice(0, 3).map(item => (
           <Link to={`/control/${item.id}`} key={item.id}>
-            <Task title={item.title} />
+            <Task title={item.title} id={item.id} />
           </Link>
         ))}
       </Grid.Task>
@@ -87,10 +87,10 @@ const Desktop = () => {
         </InfoBlock>
       </Grid>
     </DesktopWrap>
-  );
-};
+  )
+}
 
-export default Desktop;
+export default Desktop
 
 const DesktopWrap = styled.section`
   ${Header.H1} {
@@ -104,4 +104,4 @@ const DesktopWrap = styled.section`
   ${Grid} {
     margin-top: 45px;
   }
-`;
+`

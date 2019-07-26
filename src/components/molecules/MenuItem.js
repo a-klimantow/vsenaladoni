@@ -3,9 +3,9 @@ import styled from "styled-components"
 import { NavLink } from "react-router-dom"
 import { Header, Icon } from "../atoms"
 
-const MenuItem = ({ to, icon, title }) => {
+const MenuItem = ({ to, icon, title, exact }) => {
   return (
-    <ItemLinkWrap to={to} exact>
+    <ItemLinkWrap to={to} exact={exact}>
       <Icon className="icon" icon={icon} />
       <Header.H2 color={4}>{title}</Header.H2>
     </ItemLinkWrap>

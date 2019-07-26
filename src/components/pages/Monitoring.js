@@ -1,15 +1,22 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { odpu } from "../../data";
+import React, { Component } from "react"
+import styled from "styled-components"
+import { odpu } from "../../data"
+import Select from "../organisms/Select/Select"
+
+const areas = [{ id: 1, title: "Кировский" }, { id: 2, title: "Лененский" }]
+const streets = [
+  { id: 3, title: "Просп. Мира" },
+  { id: 4, title: "Просп. Химиков" }
+]
 
 export default class extends Component {
   render() {
-    const { history } = this.props;
+    const { history } = this.props
     return (
       <MonitoringWrap>
         <div className="top-row">
-          <div className="select">Район</div>
-          <div className="select">Улица</div>
+          <Select data={areas}>Район</Select>
+          <Select data={streets}>Улица</Select>
         </div>
         <Table>
           <Table.Header>
@@ -35,7 +42,7 @@ export default class extends Component {
           </Table.Body>
         </Table>
       </MonitoringWrap>
-    );
+    )
   }
 }
 
@@ -46,13 +53,13 @@ const MonitoringWrap = styled.section`
       margin-right: 20px;
     }
   }
-`;
+`
 const Table = styled.table`
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 15px;
   table-layout: fixed;
-`;
+`
 
 Table.Header = styled.thead`
   & th:first-of-type {
@@ -67,7 +74,7 @@ Table.Header = styled.thead`
     font-family: "Ubuntu", sans-serif;
     font-weight: normal;
   }
-`;
+`
 
 Table.Body = styled.tbody`
   .item {
@@ -95,6 +102,6 @@ Table.Body = styled.tbody`
       3px -3px 3px rgba(0, 0, 0, 0.02), -3px 0px 3px rgba(0, 0, 0, 0.03);
     padding-left: 30px;
   }
-`;
+`
 
-Table.Row = styled.tr``;
+Table.Row = styled.tr``

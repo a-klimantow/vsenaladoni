@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Text, Header, Step, Icon } from "../../atoms";
-import { tasks } from "../../../data";
+import React from "react"
+import styled from "styled-components"
+import { Text, Header, Step, Icon } from "../../atoms"
+import { tasks } from "../../../data"
 
 const TaskTable = ({ history }) => {
   return (
@@ -19,10 +19,10 @@ const TaskTable = ({ history }) => {
         {tasks.map(item => (
           <Table.Row
             key={item.id}
-            onClick={() => history.replace(`/control/${item.id}`)}
+            onClick={() => history.push(`/control/${item.id}`)}
           >
             <td>
-              <Text color={5}>216</Text>
+              <Text color={5}>{item.id}</Text>
             </td>
             <td>
               <Header.H2 color={1}>{item.title}</Header.H2>
@@ -46,17 +46,17 @@ const TaskTable = ({ history }) => {
         ))}
       </Table.Body>
     </Table>
-  );
-};
+  )
+}
 
-export default TaskTable;
+export default TaskTable
 
 const Table = styled.table`
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 15px;
   table-layout: fixed;
-`;
+`
 
 Table.Header = styled.thead`
   & th:first-of-type {
@@ -76,7 +76,7 @@ Table.Header = styled.thead`
     font-family: "Ubuntu", sans-serif;
     font-weight: normal;
   }
-`;
+`
 
 Table.Body = styled.tbody`
   .item {
@@ -118,6 +118,6 @@ Table.Body = styled.tbody`
       transform: translateY(-50%);
     }
   }
-`;
+`
 
-Table.Row = styled.tr``;
+Table.Row = styled.tr``

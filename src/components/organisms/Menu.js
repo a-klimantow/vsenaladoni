@@ -6,7 +6,7 @@ import MenuItem from "../molecules/MenuItem"
 const Menu = () => {
   return (
     <MenuWrap>
-      <MenuItem to="/" title="Рабочий стол" icon="desktop" />
+      <MenuItem to="/" title="Рабочий стол" icon="desktop" exact={true} />
       <MenuItem to="/control" title="Управление" icon="control" />
       <MenuItem to="/monitoring" title="Мониторинг" icon="monitoring" />
       <MenuItem to="/reports" title="Отчеты" icon="reports" />

@@ -1,22 +1,23 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { Icon, FilterPanel, Button, Grid } from "../atoms";
-import TaskCounter from "../molecules/TaskCounter";
-import Task from "../molecules/Task";
-import TaskTable from "../molecules/Task/TaskTable";
-import { tasks } from "../../data";
+import React, { Component } from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import { Icon, FilterPanel, Button, Grid } from "../atoms"
+import TaskCounter from "../molecules/TaskCounter"
+import Task from "../molecules/Task"
+import TaskTable from "../molecules/Task/TaskTable"
+import { tasks } from "../../data"
+import Select from "../organisms/Select/Select"
 
 class Control extends Component {
   state = {
-    grid: "line"
-  };
+    grid: "tile"
+  }
 
   render() {
-    const { history } = this.props;
+    const { history } = this.props
     return (
       <ControlWrap>
-        <div className="select">Любая дата</div>
+        <Select>Любая дата</Select>
         <FilterPanel>
           <TaskCounter title="Все задачи" />
           <TaskCounter title="Срочные" type="rush" />
@@ -40,16 +41,16 @@ class Control extends Component {
           <Grid.Task>
             {tasks.map(item => (
               <Link to={`/control/${item.id}`} key={item.id}>
-                <Task title={item.title} />
+                <Task title={item.title} id={item.id} />
               </Link>
             ))}
           </Grid.Task>
         )}
       </ControlWrap>
-    );
+    )
   }
 }
 
-export default Control;
+export default Control
 
-const ControlWrap = styled.section``;
+const ControlWrap = styled.section``

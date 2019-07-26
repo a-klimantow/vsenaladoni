@@ -22,7 +22,7 @@ const ControlDetail = ({ match, history }) => {
   return (
     <ControlDetailWrap>
       <div className="top-row">
-        <Button.Back onClick={() => history.goBack()}>
+        <Button.Back onClick={() => history.push("/control")}>
           <Icon icon="arrow-left" size={10} />
         </Button.Back>
         <Barge type="rush">14</Barge>

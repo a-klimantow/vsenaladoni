@@ -1,16 +1,21 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import { odpu } from "../../data";
-import { Button, Icon, Paper, Header } from "../atoms";
+import React, { Component } from "react"
+import styled from "styled-components"
+import { odpu } from "../../data"
+import { Button, Icon, Paper, Header } from "../atoms"
+import Select from "../organisms/Select/Select"
+
+const sensors = [{ id: "odpu", title: "ОДПУ" }, { id: "ipu", title: "ИПУ" }]
+const resurs = [{ id: "гвс", title: "ГВС" }, { id: "хвс", title: "ХВС" }]
+const pribor = [{ id: "вычислитель", title: "Вычислитель" }]
 
 export default class extends Component {
   render() {
-    const { history } = this.props;
+    const { history } = this.props
     return (
       <MonitoringWrap>
         <Button.Back
           style={{ marginBottom: 20 }}
-          onClick={() => history.goBack()}
+          onClick={() => history.push("/monitoring")}
         >
           <Icon icon="arrow-left" size={10} />
         </Button.Back>
@@ -86,9 +91,9 @@ export default class extends Component {
           </div>
         </CurrentInfo>
         <div className="top-row">
-          <div className="select">ОДПУ</div>
-          <div className="select">Ресурс</div>
-          <div className="select">Тип проибора</div>
+          <Select data={sensors}>ОДПУ</Select>
+          <Select data={resurs}>Ресурс</Select>
+          <Select data={pribor}>Тип прибора</Select>
         </div>
         <Table>
           <Table.Header>
@@ -111,7 +116,7 @@ export default class extends Component {
           </Table.Body>
         </Table>
       </MonitoringWrap>
-    );
+    )
   }
 }
 
@@ -122,13 +127,13 @@ const MonitoringWrap = styled.section`
       margin-right: 20px;
     }
   }
-`;
+`
 const Table = styled.table`
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 15px;
   table-layout: fixed;
-`;
+`
 
 Table.Header = styled.thead`
   & th:first-of-type {
@@ -143,7 +148,7 @@ Table.Header = styled.thead`
     font-family: "Ubuntu", sans-serif;
     font-weight: normal;
   }
-`;
+`
 
 Table.Body = styled.tbody`
   .item {
@@ -171,9 +176,9 @@ Table.Body = styled.tbody`
       3px -3px 3px rgba(0, 0, 0, 0.02), -3px 0px 3px rgba(0, 0, 0, 0.03);
     padding-left: 60px;
   }
-`;
+`
 
-Table.Row = styled.tr``;
+Table.Row = styled.tr``
 
 const CurrentInfo = styled(Paper)`
   padding: 20px 50px;
@@ -199,4 +204,4 @@ const CurrentInfo = styled(Paper)`
     color: #90a0b7;
     margin-right: 10px;
   }
-`;
+`

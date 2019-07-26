@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { Paper, Text, Header, Divider, Icon, Step } from "../../atoms"
 
-const Task = ({ title }) => {
+const Task = ({ title, id }) => {
   const task = (
     <TaskTail>
       <TaskHeader>
         <Text color={5} small>
-          216
+          {id}
         </Text>
         <Header.H2 color={4}>{title}</Header.H2>
         <Text color={5} small>
@@ -16,7 +16,7 @@ const Task = ({ title }) => {
       </TaskHeader>
       <Divider />
       <TaskBody>
-        <div>
+        <div style={{ marginBottom: 40 }}>
           <Text color={3}>Этап:</Text>
           <Step>4</Step>
           <Header.H2 color={2}>Замена прибора</Header.H2>

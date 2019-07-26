@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Paper } from "../atoms";
+import React from "react"
+import styled from "styled-components"
+import { Paper } from "../atoms"
 import {
   ResponsiveContainer,
   AreaChart,
@@ -9,7 +9,8 @@ import {
   CartesianGrid,
   Tooltip,
   Area
-} from "recharts";
+} from "recharts"
+import Select from "../organisms/Select/Select"
 
 const data = [
   {
@@ -54,7 +55,9 @@ const data = [
     pv: 4300,
     amt: 2100
   }
-];
+]
+
+const sensors = [{ id: "odpu", title: "ОДПУ" }, { id: "ipu", title: "ИПУ" }]
 
 const Chart = () => {
   return (
@@ -65,7 +68,7 @@ const Chart = () => {
         <div>Электроэнергия</div>
       </div>
       <div className="top-line">
-        <div className="select">ОДПУ</div>
+        <Select data={sensors}>ОДПУ</Select>
         <div className="select">Любая дата</div>
       </div>
       <ResponsiveContainer width="100%" height={300}>
@@ -81,10 +84,10 @@ const Chart = () => {
         </AreaChart>
       </ResponsiveContainer>
     </ChartWrap>
-  );
-};
+  )
+}
 
-export default Chart;
+export default Chart
 
 const ChartWrap = styled(Paper)`
   min-height: 360px;
@@ -114,4 +117,4 @@ const ChartWrap = styled(Paper)`
       }
     }
   }
-`;
+`
